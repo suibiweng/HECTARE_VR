@@ -1,8 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+public enum SpotTasks{
+    AtoB=0,
+    BtoA=1,
 
-public class Manager : MonoBehaviour
+    Idle=2
+
+
+
+}
+
+
+
+public class RoobaManager : MonoBehaviour
 {
 
     public udpScriptSimple RoomBaControl;
@@ -26,7 +37,7 @@ public class Manager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space)){
 
                 GenerateRock();
-                can.CanOpen(false);
+               
 
         }
 
@@ -34,7 +45,7 @@ public class Manager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.A)){
 
                 RoomBaControl.MoveBack();
-                can.CanOpen(true);
+        
 
         }
 

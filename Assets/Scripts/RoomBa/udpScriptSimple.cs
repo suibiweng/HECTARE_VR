@@ -14,6 +14,9 @@ public class udpScriptSimple : MonoBehaviour
   UdpClient client;
 
   public RoomBA roomBA;
+
+  public string IP="192.168.0.100";
+  public int Port=8585;
   
  
   public float step = 2;
@@ -25,7 +28,7 @@ public class udpScriptSimple : MonoBehaviour
    void Start()
    {
      // IP and port
-    remoteEndPoint = new IPEndPoint(IPAddress.Parse("192.168.0.100"), 8585);
+    remoteEndPoint = new IPEndPoint(IPAddress.Parse(IP), Port);
     client = new UdpClient();
    }
 
@@ -35,22 +38,11 @@ public class udpScriptSimple : MonoBehaviour
 
     
     string cmd="";
-    steps =Random.Range(1,5);
+    steps =5;
 cmd=steps+"F";
 
-roomBA.misson=MissonStatus.PlaceTheRock;
+roomBA.misson=MissonStatus.isTarget;
 roomBA.status=RoomBAStatus.Moving;
-
-
-  /*  
-  for(int i=0;i<steps;i++){
-     
-        cmd += 'W';
-     
-     
-      
-
-    }*/
 
 
     print(cmd);
@@ -74,7 +66,7 @@ cmd=steps+"B";
 
 
 
-roomBA.misson=MissonStatus.MoveBacktoBase;
+roomBA.misson=MissonStatus.isBase;
 roomBA.status=RoomBAStatus.Moving;
 
      

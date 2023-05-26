@@ -9,7 +9,7 @@ using System.Threading;
 public class UDPServer : MonoBehaviour
 {
     public string datain;
-    public Manager manager;
+    public RoobaManager manager;
     Thread receiveThread;
     UdpClient client;
 
